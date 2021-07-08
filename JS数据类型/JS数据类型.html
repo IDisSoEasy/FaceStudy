@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1
+    
+    // 2
+    let a = {
+      name: 'lee',
+      age: 20
+    }
+
+    function change(o) {
+      o.age = 24;
+      o = {
+        name: 'Kath',
+        age: 30
+      }
+      return o
+    }
+
+    let b = change(a)
+    console.log(a.age)
+    console.log(b.age)
+  </script>
+</body>
+</html>
