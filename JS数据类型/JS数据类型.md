@@ -11,7 +11,7 @@
 * 判断数据类型
   > typeof
     > > + typeof 可以判断基础数据类型（null除外）
-    > > + 但是引用数据类型中，处理function，其他的也无法判断
+    > > + 但是引用数据类型中，除了function，其他的也无法判断
 
   > instanceof 
     > > + instanceof 可以准确地判断复杂数据类型
@@ -19,3 +19,7 @@
 
   > Object.prototype.toString.Call()
     > > + Object.prototype.toString.Call 可以准确的判断出引用数据和基础数据
+  
+* 数据类型转换
+  > 强制类型转换
+  > 隐式类型转换
