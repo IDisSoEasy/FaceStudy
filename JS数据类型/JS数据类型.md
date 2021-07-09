@@ -21,7 +21,7 @@
     > > + Object.prototype.toString.Call 可以准确的判断出引用数据和基础数据
   
 * 数据类型转换
-  > - 强制类型转换
+  > 强制类型转换
   > > + Number()  
   > > > - 如果是布尔值，true 和 false 分别被转换为 1 和 0  
   > > > - 如果是数字，返回自身  
@@ -35,4 +35,4 @@
   > > > - 除了 undefined、 null、 false、 ''、 0（包括 +0，-0）、 NaN 转换出来是 false，其他都是 true  
   > > + parseInt()  
   > > + toString()  
-  > - 隐式类型转换
+  > 隐式类型转换
