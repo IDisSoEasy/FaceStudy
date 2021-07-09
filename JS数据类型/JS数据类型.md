@@ -35,4 +35,4 @@
   > > > - 除了 undefined、 null、 false、 ''、 0（包括 +0，-0）、 NaN 转换出来是 false，其他都是 true  
   > > + parseInt()  
   > > + toString()  
-  > 隐式类型转换
+  > + 隐式类型转换
