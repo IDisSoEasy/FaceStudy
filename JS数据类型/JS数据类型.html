@@ -1,32 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JS数据类型Demo</title>
-</head>
-<body>
-  <script>
-    // 1
-    
-    // 2
-    let a = {
-      name: 'lee',
-      age: 20
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS数据类型Demo</title>
+  </head>
+  <body>
+    <script>
+      // Number()
+      Number(true); // 1
+      Number(false); // 0
+      Number(10); // 10
+      Number(null); // 0
+      Number(undefined); // NaN
+      Number(''); // 0
+      Number('10'); // 10
+      Number('010'); // 10
+      Number('1.2'); // 1.2
+      Number('01.2'); // 1.2
+      Number('0xf'); // 15
+      Number('hello'); // NaN
+      /*----*/
+      Number([]); // 0
+      Number([10]); // 10
+      Number([null]); // 0
+      Number([[10]]); // 10
+      /*----*/
+      Number({}); //NaN
+      var obj = { a: 1 };
+      Number(obj); //NaN
+      /*----*/
+      var obj = {
+        valueOf: function () {
+          return {};
+        },
+        toString: function () {
+          return {};
+        },
+      };
+      Number(obj); // TypeError: Cannot convert object to primitive value
 
-    function change(o) {
-      o.age = 24;
-      o = {
-        name: 'Kath',
-        age: 30
-      }
-      return o
-    }
+      // String()
+      String(123); // '123'
+      String('abc'); // 'abc'
+      String(true); // 'true'
+      String(undefined); // 'undefined'
+      String(null); // 'null'
+      /*----*/
+      String({ name: 1 }); // '[object Object]'  等同于⬇️
+      String({ name: 1 }.toString());
+      String('[object Object]'); // '[object Object]'
+      /*----*/
+      var obj = {
+        valueOf: function () {
+          return {};
+        },
+        toString: function () {
+          return {};
+        },
+      };
+      String(obj); // TypeError: Cannot convert object to primitive value
 
-    let b = change(a)
-    console.log(a.age)
-    console.log(b.age)
-  </script>
-</body>
+      // Boolean()
+      Boolean({}); // true
+      Boolean([]); // true
+      Boolean(new Boolean(false)); // true
+
+      // parseFloat()
+      parseFloat('123abc'); // 123
+      parseFloat('0xa'); // 0
+      parseFloat('12.3'); // 12.3
+      parseFloat('12.3.4'); // 12.3
+      parseFloat('012.3'); // 12.3
+
+      // parseInt()
+      parseInt('123abc'); // 123
+      parseInt(''); // NaN
+      parseInt('a12'); // NaN
+      parseInt('0xa'); // 10(十六进制数)
+      parseInt('12.5'); // 12
+      parseInt('070'); // 56(八进制数)
+      /*----*/
+      parseInt('0xaf'); // 175
+      parseInt('af'); // NaN
+      // af 本来是有效的十六进制数值，如果指定第二个参数为16，使用十六进制来解析，那么可以省略前面的 0x
+      parseInt('af', 16); // 175
+    </script>
+  </body>
 </html>
